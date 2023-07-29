@@ -131,13 +131,13 @@ def handle_image_message(event):
     with ApiClient(configuration) as api_client:
         # 當使用者傳送圖片時
         line_bot_api = MessagingApi(api_client)
-        size = event.message.size
+        #size = event.message.size
         line_bot_api.reply_message_with_http_info(
             ReplyMessageRequest(
                 reply_token = event.reply_token,
                 messages=[
                     TextMessage(text=f"You just sent an image!"),
-                    TextMessage(text=f"The size of the image is{size}")
+                    #TextMessage(text=f"The size of the image is{size}")
                 ]
             )
         )
