@@ -39,7 +39,7 @@ table = get_exchange_table()
 
 app = Flask(__name__)
 
-configuration = Configuration(os.getenv("CHANNEL_ACCESS_TOKEN"))
+configuration = Configuration(access_token=os.getenv("CHANNEL_ACCESS_TOKEN"))
 handler = WebhookHandler(os.getenv("CHANNEL_SECRET"))
 
 @app.route("/", methods=['POST'])
